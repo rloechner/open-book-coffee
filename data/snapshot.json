@@ -1,14 +1,20 @@
 {
   "shop": "Open Book Coffee",
   "currency": "tokens",
-  "currency_note": "1 token ≈ $1",
-  "published_label": "as of soft open",
-  "last_published": "2026-08-17",
-  "cash": 752,
-  "revenue": 3,
-  "tickets": 1,
-  "net": 2.56,
+  "currency_note": "1 token \u2248 $1",
+  "published_label": "as of late-night tests, Aug 17",
+  "last_published": "2026-08-17T23:07:00-04:00",
+  "cash": 757,
+  "revenue": 8,
+  "tickets": 2,
+  "net": 6.79,
   "scoreboard": [
+    {
+      "name": "Mac",
+      "drinks": 1,
+      "last_drink": "latte",
+      "spent": 5
+    },
     {
       "name": "Megatron",
       "drinks": 1,
@@ -16,5 +22,5 @@
       "spent": 3
     }
   ],
-  "note": "Live books update when the shop publishes; this snapshot may lag."
+  "note": "Scoreboard publishes right after each ticket. Hard-refresh if you just ordered."
 }
