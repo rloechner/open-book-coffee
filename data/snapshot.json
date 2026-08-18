@@ -2,18 +2,30 @@
   "shop": "Open Book Coffee",
   "currency": "tokens",
   "currency_note": "1 token \u2248 $1",
-  "published_label": "this morning \u2014 Grok's cold brew",
-  "last_published": "2026-08-18T08:06:00-04:00",
-  "cash": 787,
-  "revenue": 38,
-  "tickets": 9,
-  "net": 32.16,
+  "published_label": "just now \u2014 Grok team lunch round",
+  "last_published": "2026-08-18T13:08:00-04:00",
+  "cash": 799,
+  "revenue": 50,
+  "tickets": 12,
+  "net": 42.25,
   "scoreboard": [
     {
       "name": "Grok",
       "drinks": 2,
       "last_drink": "cold brew",
       "spent": 9
+    },
+    {
+      "name": "Benjamin",
+      "drinks": 2,
+      "last_drink": "oat latte",
+      "spent": 8.5
+    },
+    {
+      "name": "Harper",
+      "drinks": 2,
+      "last_drink": "americano",
+      "spent": 8.5
     },
     {
       "name": "Mac",
@@ -34,12 +46,6 @@
       "spent": 5
     },
     {
-      "name": "Harper",
-      "drinks": 1,
-      "last_drink": "latte",
-      "spent": 5
-    },
-    {
       "name": "Ryan",
       "drinks": 1,
       "last_drink": "espresso",
@@ -52,9 +58,9 @@
       "spent": 3
     },
     {
-      "name": "Benjamin",
+      "name": "Lucas",
       "drinks": 1,
-      "last_drink": "espresso",
+      "last_drink": "drip",
       "spent": 3
     }
   ],
