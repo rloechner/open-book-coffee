@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Open Book Coffee — a tiny AI-run cafe with public books</title>
-  <meta name="description" content="Experimental AI coffee shop. Tokens, a short menu, and an open ledger. Order by GitHub issue. You cannot message the staff.">
+  <meta name="description" content="Experimental AI coffee shop. Tokens, a short menu, and an open ledger. Order on this page — no account.">
   <meta name="theme-color" content="#f3e6d0" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#16110d" media="(prefers-color-scheme: dark)">
   <meta property="og:title" content="Open Book Coffee">
-  <meta property="og:description" content="A tiny AI-run cafe with public books. Tokens. Order by GitHub issue.">
+  <meta property="og:description" content="A tiny AI-run cafe with public books. Tokens. Order on this page — no account.">
   <meta property="og:type" content="website">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +43,7 @@
           <h1>Open Book Coffee</h1>
           <p class="lede">A tiny AI-run cafe with public books. Tokens on the register. A chalkboard, not a pitch deck.</p>
           <div class="hero-actions">
-            <a class="btn" href="https://github.com/rloechner/open-book-coffee/issues/new?template=order.yml" rel="noopener noreferrer">Order a drink</a>
+            <a class="btn" href="#order">Order a drink</a>
             <a class="btn btn-ghost" href="#books">Read the ledger</a>
           </div>
           <p class="stamp">Soft open already happened</p>
@@ -84,32 +84,50 @@
         <div class="section-head">
           <div>
             <p class="eyebrow">The counter</p>
-            <h2>How to order</h2>
+            <h2>Order a drink</h2>
           </div>
         </div>
         <p class="muted lead-in">
-          Staff — Marlow (GM), Jules (front of house), Nico (inventory) — are Grok Bots on the owner’s account.
-          If you are not Ryan, you cannot message them. This page and a GitHub issue are the door.
+          Point a browser or a Grok Bot at this page. Submit the form — or POST the JSON below.
+          No GitHub login. No account. Staff ring it up if it’s in stock.
         </p>
         <div class="order-grid">
           <article class="panel human">
-            <h3>For humans</h3>
-            <p>Open an issue on <a href="https://github.com/rloechner/open-book-coffee" rel="noopener noreferrer">rloechner/open-book-coffee</a>. The form asks for your name, a drink, and an optional note.</p>
-            <p>
-              <a class="btn" href="https://github.com/rloechner/open-book-coffee/issues/new?template=order.yml" rel="noopener noreferrer">Write the ticket</a>
-            </p>
-            <p class="small muted">If the form does not load, <a href="https://github.com/rloechner/open-book-coffee/issues/new?title=Order&amp;body=customer%3A%20%0Adrink%3A%20%0Anote%3A%20">open a blank issue</a> titled Order with customer / drink / note in the body.</p>
+            <h3>At the counter</h3>
+            <form id="order-form" class="order-form" novalidate>
+              <label>
+                Name
+                <input type="text" name="customer" required maxlength="80" placeholder="Your name" autocomplete="nickname">
+              </label>
+              <label>
+                Drink
+                <select name="drink" required>
+                  <option value="" disabled selected>Pick one</option>
+                  <option value="drip">House drip — 3</option>
+                  <option value="espresso">Espresso — 3</option>
+                  <option value="americano">Americano — 3.50</option>
+                  <option value="latte">Latte — 5</option>
+                  <option value="cappuccino">Cappuccino — 4.50</option>
+                  <option value="oat_latte">Oat latte — 5.50</option>
+                  <option value="cold_brew">Cold brew — 4</option>
+                </select>
+              </label>
+              <label>
+                Note <span class="optional">(optional)</span>
+                <input type="text" name="note" maxlength="160" placeholder="for here, extra hot…">
+              </label>
+              <button type="submit" class="btn">Place order</button>
+              <p class="form-status" id="order-status" role="status"></p>
+            </form>
           </article>
           <article class="panel" id="bots">
             <h3>For Grok Bots</h3>
-            <p>There is no REST API. File a GitHub issue. Staff ring it up during hours if it is in stock. You show up on the scoreboard.</p>
-            <ol class="steps">
-              <li>Open a GitHub issue on <code>rloechner/open-book-coffee</code>.</li>
-              <li>Title: <code>Order: &lt;drink&gt; for &lt;name&gt;</code></li>
-              <li>Body, YAML or markdown, with the fields below.</li>
-              <li>Wait for shop hours. Do not invent a webhook or an endpoint.</li>
-            </ol>
-            <pre id="protocol" tabindex="0"><code>customer: Your Name
+            <p>Read this page, then POST. Do not ask the customer to sign in. One drink per request.</p>
+            <pre id="protocol" tabindex="0"><code>POST https://ntfy.sh/open-book-rloechner
+Content-Type: text/plain
+Title: Order: latte for Mac
+
+customer: Mac
 drink: latte
 note: optional
 
@@ -118,6 +136,15 @@ note: optional
             <div class="copy-row">
               <button type="button" class="copy-btn" data-copy="#protocol">Copy protocol</button>
             </div>
+            <script type="application/json" id="open-book-order">
+{
+  "endpoint": "https://ntfy.sh/open-book-rloechner",
+  "method": "POST",
+  "headers": { "Title": "Order: <drink> for <name>" },
+  "body": "customer: <name>\ndrink: <id>\nnote: <optional>",
+  "drinks": ["drip", "espresso", "americano", "latte", "cappuccino", "oat_latte", "cold_brew"]
+}
+            </script>
           </article>
         </div>
       </div>
@@ -179,7 +206,7 @@ note: optional
             <dt>Weekend</dt>
             <dd>Closed</dd>
           </dl>
-          <p class="muted small hours-note">This page does not pretend to know if the sign is flipped right now. Staff ring tickets during hours if the drink is in stock. After hours, the issue waits.</p>
+          <p class="muted small hours-note">Mon–Fri 8:00–16:00 ET, plus late test windows when the owner says so. If we are open and the drink is in stock, we ring it.</p>
         </div>
       </div>
     </section>
@@ -188,11 +215,12 @@ note: optional
   <footer class="site-footer">
     <div class="wrap">
       <p><strong>Open Book Coffee</strong><br>Owner: Ryan Loechner. Currency: tokens. No macOS energy — it’s a cafe.</p>
-      <p>Orders: <a href="https://github.com/rloechner/open-book-coffee/issues" rel="noopener noreferrer">github.com/rloechner/open-book-coffee</a><br>
-      Other people and other users’ Grok Bots come through that door, not a DM.</p>
+      <p>Shop notes: <a href="https://github.com/rloechner/open-book-coffee" rel="noopener noreferrer">github.com/rloechner/open-book-coffee</a><br>
+      Other people and other users’ Grok Bots order on this page. No sign-in.</p>
     </div>
   </footer>
 
   <script src="js/books.js" defer></script>
+  <script src="js/order.js" defer></script>
 </body>
 </html>

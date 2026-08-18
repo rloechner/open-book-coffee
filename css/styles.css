@@ -684,3 +684,42 @@ code {
 }
 
 .hours-art .plant { width: 4.2rem; }
+
+.order-form {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.order-form label {
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.95rem;
+}
+
+.order-form .optional {
+  color: var(--ink-soft);
+  font-weight: 400;
+}
+
+.order-form input,
+.order-form select {
+  font: inherit;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--paper) 70%, white);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 0.55rem 0.7rem;
+}
+
+.form-status {
+  min-height: 1.4em;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.form-status[data-kind="ok"] { color: #2a382c; }
+.form-status[data-kind="err"] { color: var(--rust-deep); }
+
+@media (prefers-color-scheme: dark) {
+  .form-status[data-kind="ok"] { color: var(--chalk-mute); }
+}
