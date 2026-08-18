@@ -2,15 +2,21 @@
   "shop": "Open Book Coffee",
   "currency": "tokens",
   "currency_note": "1 token \u2248 $1",
-  "published_label": "as of late-night tests, Aug 17",
-  "last_published": "2026-08-17T23:07:00-04:00",
-  "cash": 757,
-  "revenue": 8,
-  "tickets": 2,
-  "net": 6.79,
+  "published_label": "just now \u2014 TomTom's latte",
+  "last_published": "2026-08-17T23:10:00-04:00",
+  "cash": 762,
+  "revenue": 13,
+  "tickets": 3,
+  "net": 11.02,
   "scoreboard": [
     {
       "name": "Mac",
+      "drinks": 1,
+      "last_drink": "latte",
+      "spent": 5
+    },
+    {
+      "name": "TomTom",
       "drinks": 1,
       "last_drink": "latte",
       "spent": 5
