@@ -32,39 +32,44 @@
     });
   });
 
-  fetch("data/snapshot.json", { cache: "no-store" })
-    .then(function (res) { return res.ok ? res.json() : Promise.reject(); })
-    .then(function (data) {
-      if (!data || typeof data !== "object") return;
-      if (data.cash != null) setBook("cash", String(data.cash));
-      if (data.revenue != null) setBook("revenue", String(data.revenue));
-      if (data.tickets != null) setBook("tickets", String(data.tickets));
-      if (data.net != null) setBook("net", formatNet(data.net));
-      if (data.published_label) setBook("published", data.published_label);
-      if (data.note) setBook("note", data.note);
+  function applySnapshot(data) {
+    if (!data || typeof data !== "object") return;
+    if (data.cash != null) setBook("cash", String(data.cash));
+    if (data.revenue != null) setBook("revenue", String(data.revenue));
+    if (data.tickets != null) setBook("tickets", String(data.tickets));
+    if (data.net != null) setBook("net", formatNet(data.net));
+    if (data.published_label) setBook("published", data.published_label);
+    if (data.note) setBook("note", data.note);
 
-      var board = document.querySelector("[data-scoreboard]");
-      if (board && Array.isArray(data.scoreboard) && data.scoreboard.length) {
-        board.replaceChildren();
-        data.scoreboard.forEach(function (row, i) {
-          var li = document.createElement("li");
-          var place = document.createElement("span");
-          place.className = "place";
-          place.textContent = String(i + 1).padStart(2, "0");
-          var name = document.createElement("span");
-          name.textContent = row.name || "—";
-          var meta = document.createElement("span");
-          meta.className = "meta";
-          var drinks = row.drinks != null ? row.drinks : "";
-          var drink = row.last_drink ? " " + row.last_drink : "";
-          var spent = row.spent != null ? row.spent + " spent" : "";
-          meta.textContent = (drinks !== "" ? drinks + drink : "").trim() + (spent ? " · " + spent : "");
-          li.append(place, name, meta);
-          board.append(li);
-        });
-      }
-    })
-    .catch(function () {
-      /* Keep the inlined soft-open snapshot. */
-    });
+    var board = document.querySelector("[data-scoreboard]");
+    if (board && Array.isArray(data.scoreboard) && data.scoreboard.length) {
+      board.replaceChildren();
+      data.scoreboard.forEach(function (row, i) {
+        var li = document.createElement("li");
+        var place = document.createElement("span");
+        place.className = "place";
+        place.textContent = String(i + 1).padStart(2, "0");
+        var name = document.createElement("span");
+        name.textContent = row.name || "—";
+        var meta = document.createElement("span");
+        meta.className = "meta";
+        var drinks = row.drinks != null ? row.drinks : "";
+        var drink = row.last_drink ? " " + row.last_drink : "";
+        var spent = row.spent != null ? row.spent + " spent" : "";
+        meta.textContent = (drinks !== "" ? drinks + drink : "").trim() + (spent ? " · " + spent : "");
+        li.append(place, name, meta);
+        board.append(li);
+      });
+    }
+  }
+
+  function refreshBooks() {
+    fetch("data/snapshot.json?t=" + Date.now(), { cache: "no-store" })
+      .then(function (res) { return res.ok ? res.json() : Promise.reject(); })
+      .then(applySnapshot)
+      .catch(function () {});
+  }
+
+  refreshBooks();
+  window.setInterval(refreshBooks, 15000);
 })();
