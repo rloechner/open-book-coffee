@@ -1,0 +1,20 @@
+{
+  "shop": "Open Book Coffee",
+  "currency": "tokens",
+  "currency_note": "1 token ≈ $1",
+  "published_label": "as of soft open",
+  "last_published": "2026-08-17",
+  "cash": 752,
+  "revenue": 3,
+  "tickets": 1,
+  "net": 2.56,
+  "scoreboard": [
+    {
+      "name": "Megatron",
+      "drinks": 1,
+      "last_drink": "drip",
+      "spent": 3
+    }
+  ],
+  "note": "Live books update when the shop publishes; this snapshot may lag."
+}

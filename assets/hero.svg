@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-labelledby="heroTitle heroDesc">
+  <title id="heroTitle">A small cafe counter</title>
+  <desc id="heroDesc">An open book, a coffee cup, a chalkboard menu, and a plant on a wooden counter under a window.</desc>
+  <style>
+    .wall { fill: #e8d4b5; }
+    .wainscot { fill: #d7c09a; }
+    .sky { fill: #c5d0b8; }
+    .pane { fill: #dfe8d6; stroke: #6b3e2a; stroke-width: 3; }
+    .mullion { stroke: #6b3e2a; stroke-width: 3; }
+    .sill { fill: #6b3e2a; }
+    .shelf { fill: #6b3e2a; }
+    .book-a { fill: #b84328; }
+    .book-b { fill: #2a382c; }
+    .jar { fill: #fff6e4; stroke: #241910; stroke-width: 1.6; }
+    .beans { fill: #6b3e2a; }
+    .counter { fill: #6b3e2a; }
+    .counter-top { fill: #8a5340; }
+    .counter-edge { fill: #5a3224; }
+    .page-l { fill: #fff6e4; }
+    .page-r { fill: #f3e6d0; }
+    .book-cover { fill: #241910; }
+    .rule { stroke: #c9b49a; stroke-width: 1.1; fill: none; }
+    .cup { fill: #fff6e4; stroke: #241910; stroke-width: 2; }
+    .coffee { fill: #3a2e24; }
+    .saucer { fill: none; stroke: #241910; stroke-width: 2; }
+    .handle { fill: none; stroke: #241910; stroke-width: 2.2; stroke-linecap: round; }
+    .steam { stroke: #b84328; stroke-width: 1.8; fill: none; stroke-linecap: round; }
+    .board { fill: #2a382c; stroke: #3d2a1c; stroke-width: 6; }
+    .chalk { fill: #f3e6c4; }
+    .chalk-line { stroke: #c5d0b8; stroke-width: 1.4; fill: none; stroke-linecap: round; }
+    .easel { stroke: #3d2a1c; stroke-width: 4; fill: none; stroke-linecap: round; }
+    .leaf { fill: #2a382c; }
+    .pot { fill: #b84328; }
+    .pot-rim { fill: #8e2f1c; }
+    .shadow { fill: #241910; opacity: .12; }
+    .dot { fill: #b84328; }
+    @media (prefers-color-scheme: dark) {
+      .wall { fill: #241910; }
+      .wainscot { fill: #1a1410; }
+      .sky { fill: #1a241c; }
+      .pane { fill: #243028; stroke: #c9b49a; }
+      .mullion { stroke: #c9b49a; }
+      .sill { fill: #a86b4a; }
+      .shelf { fill: #a86b4a; }
+      .book-a { fill: #e06a48; }
+      .book-b { fill: #8fa086; }
+      .jar { fill: #2a1f16; stroke: #f3e6d0; }
+      .beans { fill: #c9b49a; }
+      .counter { fill: #3a2418; }
+      .counter-top { fill: #5a3224; }
+      .counter-edge { fill: #2a1a12; }
+      .page-l { fill: #2a1f16; }
+      .page-r { fill: #221a14; }
+      .book-cover { fill: #e8d4b5; }
+      .rule { stroke: #5a4636; }
+      .cup { fill: #2a1f16; stroke: #f3e6d0; }
+      .coffee { fill: #c9b49a; }
+      .saucer { stroke: #f3e6d0; }
+      .handle { stroke: #f3e6d0; }
+      .steam { stroke: #e06a48; }
+      .board { fill: #1a241c; stroke: #a86b4a; }
+      .chalk { fill: #e8d9b0; }
+      .chalk-line { stroke: #8fa086; }
+      .easel { stroke: #a86b4a; }
+      .leaf { fill: #8fa086; }
+      .pot { fill: #e06a48; }
+      .pot-rim { fill: #c44d30; }
+      .shadow { fill: #000; opacity: .35; }
+      .dot { fill: #e06a48; }
+    }
+  </style>
+
+  <rect class="wall" width="800" height="420"/>
+  <rect class="wainscot" y="248" width="800" height="52"/>
+
+  <!-- window -->
+  <rect class="sky" x="512" y="36" width="236" height="168"/>
+  <rect class="pane" x="512" y="36" width="236" height="168" fill="none"/>
+  <path class="mullion" d="M630 36v168M512 120h236"/>
+  <!-- simple tree outside -->
+  <circle class="leaf" cx="590" cy="130" r="28" opacity=".55"/>
+  <circle class="leaf" cx="680" cy="118" r="22" opacity=".4"/>
+  <rect class="sill" x="500" y="200" width="260" height="10" rx="1"/>
+
+  <!-- shelf + props -->
+  <rect class="shelf" x="48" y="92" width="220" height="8" rx="1"/>
+  <rect class="book-a" x="64" y="54" width="16" height="38" rx="1"/>
+  <rect class="book-b" x="82" y="48" width="14" height="44" rx="1"/>
+  <rect class="book-a" x="98" y="60" width="12" height="32" rx="1" transform="rotate(-6 104 76)"/>
+  <rect class="jar" x="186" y="54" width="36" height="38" rx="4"/>
+  <ellipse class="jar" cx="204" cy="54" rx="18" ry="6"/>
+  <circle class="beans" cx="196" cy="74" r="3"/>
+  <circle class="beans" cx="208" cy="78" r="2.6"/>
+  <circle class="beans" cx="214" cy="70" r="2.4"/>
+  <circle class="beans" cx="200" cy="82" r="2"/>
+
+  <!-- hanging dots / string lights suggestion -->
+  <circle class="dot" cx="320" cy="44" r="3"/>
+  <circle class="dot" cx="360" cy="52" r="2.4"/>
+  <circle class="dot" cx="400" cy="44" r="3"/>
+  <circle class="dot" cx="440" cy="50" r="2.4"/>
+
+  <!-- counter -->
+  <ellipse class="shadow" cx="400" cy="308" rx="380" ry="16"/>
+  <rect class="counter-top" x="0" y="288" width="800" height="22"/>
+  <rect class="counter-edge" x="0" y="310" width="800" height="8"/>
+  <rect class="counter" x="0" y="318" width="800" height="102"/>
+  <!-- cabinet lines -->
+  <path class="rule" d="M200 330v78M400 330v78M600 330v78" stroke-width="2"/>
+
+  <!-- open book -->
+  <g transform="translate(70 214)">
+    <path class="book-cover" d="M8 18l104-16 8 58-108 14z"/>
+    <path class="book-cover" d="M120 2l108 18-10 56-110-14z"/>
+    <path class="page-l" d="M16 20l92-14 6 50-96 12z"/>
+    <path class="page-r" d="M120 8l92 16-8 48-96-12z"/>
+    <path class="rule" d="M32 28l70-10M30 36l68-9M29 44l66-8"/>
+    <path class="rule" d="M132 20l70 12M130 28l68 11M128 36l66 11"/>
+  </g>
+
+  <!-- cup + saucer -->
+  <g transform="translate(338 214)">
+    <ellipse class="shadow" cx="52" cy="78" rx="48" ry="8"/>
+    <ellipse class="saucer" cx="48" cy="76" rx="44" ry="10"/>
+    <path class="cup" d="M20 40h52l-5 30c-1.4 8-9 13-21 13s-19.6-5-21-13l-5-30z"/>
+    <ellipse class="coffee" cx="46" cy="41" rx="20" ry="6"/>
+    <ellipse class="saucer" cx="46" cy="40" rx="26" ry="8"/>
+    <path class="handle" d="M72 48c14 2 16 14 8 22-5 5-12 5-16 3"/>
+    <path class="steam" d="M34 28c3-8-5-10 0-18"/>
+    <path class="steam" d="M46 26c4-9-2-12 2-20"/>
+    <path class="steam" d="M58 28c3-7-3-11 1-17"/>
+  </g>
+
+  <!-- chalkboard on easel -->
+  <g transform="translate(548 148)">
+    <path class="easel" d="M70 132l-18 56M86 132l18 56M40 188h96"/>
+    <rect class="board" x="18" y="8" width="132" height="128" rx="3"/>
+    <text class="chalk" x="84" y="42" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-style="italic">today</text>
+    <path class="chalk-line" d="M38 54h92"/>
+    <path class="chalk-line" d="M38 70h70"/>
+    <path class="chalk-line" d="M38 86h84"/>
+    <path class="chalk-line" d="M38 102h60"/>
+    <path class="chalk-line" d="M38 118h76"/>
+  </g>
+
+  <!-- plant -->
+  <g transform="translate(700 196)">
+    <path class="leaf" d="M28 70c-2-22 12-38 26-40-8 12-8 26-6 38-10 0-16 0-20 2z"/>
+    <path class="leaf" d="M28 72c0-18-14-34-28-40 14 6 18 22 18 36 6 2 10 4 10 4z"/>
+    <path class="leaf" d="M26 70c-4-22 6-40 16-48-2 16 0 32 2 44-6 2-12 4-18 4z"/>
+    <rect class="pot-rim" x="10" y="70" width="40" height="7" rx="1"/>
+    <path class="pot" d="M14 77h32l-4 28H18z"/>
+  </g>
+</svg>

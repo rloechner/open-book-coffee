@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 160" role="img" aria-labelledby="spillTitle">
+  <title id="spillTitle">A tipped cup and a coffee spill</title>
+  <style>
+    .spill { fill: #6b3e2a; }
+    .cup { fill: #fff6e4; stroke: #241910; stroke-width: 2.2; }
+    .handle { fill: none; stroke: #241910; stroke-width: 2.2; }
+    .stain { fill: #6b3e2a; opacity: .28; }
+    @media (prefers-color-scheme: dark) {
+      .spill { fill: #a86b4a; }
+      .cup { fill: #2a1f16; stroke: #f3e6d0; }
+      .handle { stroke: #f3e6d0; }
+      .stain { fill: #e06a48; opacity: .28; }
+    }
+  </style>
+  <ellipse class="stain" cx="168" cy="118" rx="86" ry="22"/>
+  <path class="spill" d="M92 78c18 4 28-6 46-2 16 4 22 16 48 14 20-2 36 8 52 2 8-3 18-2 22 6-18 10-40 14-64 12-28-2-40-12-62-10-18 2-32 12-52 8-6-14 2-32 10-30z"/>
+  <g transform="translate(28 38) rotate(-28)">
+    <path class="cup" d="M8 16h44l-4 26c-1 6-7 10-18 10s-17-4-18-10L8 16z"/>
+    <ellipse class="cup" cx="30" cy="16" rx="22" ry="7"/>
+    <path class="handle" d="M52 24c10 2 12 12 6 18"/>
+  </g>
+</svg>

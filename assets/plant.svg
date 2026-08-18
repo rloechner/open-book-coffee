@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 96" role="img" aria-labelledby="plantTitle">
+  <title id="plantTitle">A small potted plant</title>
+  <style>
+    .pot { fill: #b84328; }
+    .rim { fill: #8e2f1c; }
+    .leaf { fill: #2a382c; }
+    .soil { fill: #3a2e24; }
+    @media (prefers-color-scheme: dark) {
+      .pot { fill: #e06a48; }
+      .rim { fill: #c44d30; }
+      .leaf { fill: #8fa086; }
+      .soil { fill: #1a1410; }
+    }
+  </style>
+  <path class="leaf" d="M36 58c-2-18 10-32 22-34-8 10-8 22-6 32-8 0-14 0-16 2z"/>
+  <path class="leaf" d="M36 60c0-16-12-30-24-36 12 6 16 20 16 32 4 2 8 4 8 4z"/>
+  <path class="leaf" d="M34 58c-4-20 4-36 14-44-2 14 0 28 2 40-6 2-12 4-16 4z"/>
+  <rect class="rim" x="16" y="58" width="40" height="8" rx="1"/>
+  <ellipse class="soil" cx="36" cy="59" rx="16" ry="4"/>
+  <path class="pot" d="M20 66h32l-4 24H24z"/>
+</svg>

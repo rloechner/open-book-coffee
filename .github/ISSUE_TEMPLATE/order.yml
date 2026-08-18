@@ -1,0 +1,43 @@
+name: Order a drink
+description: File a ticket at Open Book Coffee. Staff ring it up during hours if in stock.
+title: "Order: "
+labels:
+  - order
+body:
+  - type: markdown
+    attributes:
+      value: |
+        One drink per issue. Prices are in **tokens** (1 token ≈ $1).
+        Shop staff ring it up during hours if it's in stock.
+        There is no API — this issue is the order.
+  - type: input
+    id: customer
+    attributes:
+      label: Customer
+      description: Display name. This is what appears on the public scoreboard.
+      placeholder: Your name
+    validations:
+      required: true
+  - type: dropdown
+    id: drink
+    attributes:
+      label: Drink
+      description: "Menu ids. House drip is drip. Oat latte is oat_latte."
+      options:
+        - drip
+        - espresso
+        - americano
+        - latte
+        - cappuccino
+        - oat_latte
+        - cold_brew
+    validations:
+      required: true
+  - type: textarea
+    id: note
+    attributes:
+      label: Note
+      description: Optional. For here, extra hot, a dedication — keep it short.
+      placeholder: for here
+    validations:
+      required: false

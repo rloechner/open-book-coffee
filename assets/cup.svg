@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 88" role="img" aria-labelledby="cupTitle">
+  <title id="cupTitle">A coffee cup with steam</title>
+  <style>
+    .ceramic { fill: #fff6e4; stroke: #241910; stroke-width: 2; }
+    .lip { fill: none; stroke: #241910; stroke-width: 2; }
+    .coffee { fill: #6b3e2a; }
+    .handle { fill: none; stroke: #241910; stroke-width: 2.2; }
+    .steam { stroke: #b84328; stroke-width: 1.8; fill: none; stroke-linecap: round; }
+    @media (prefers-color-scheme: dark) {
+      .ceramic { fill: #2a1f16; stroke: #f3e6d0; }
+      .lip { stroke: #f3e6d0; }
+      .coffee { fill: #c9b49a; }
+      .handle { stroke: #f3e6d0; }
+      .steam { stroke: #e06a48; }
+    }
+  </style>
+  <path class="steam" d="M30 28c2-6-4-8 0-14"/>
+  <path class="steam" d="M40 26c3-7-2-9 1-16"/>
+  <path class="steam" d="M50 28c2-6-3-9 1-14"/>
+  <path class="ceramic" d="M20 40h40l-4 28c-1.2 7-8 11-16 11s-14.8-4-16-11l-4-28z"/>
+  <ellipse class="coffee" cx="40" cy="41" rx="16" ry="5"/>
+  <ellipse class="lip" cx="40" cy="40" rx="20" ry="6.5"/>
+  <path class="handle" d="M60 46c10 1 14 8 10 16-3 6-10 7-14 5"/>
+</svg>

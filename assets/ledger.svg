@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 88" role="img" aria-labelledby="ledTitle">
+  <title id="ledTitle">A small open ledger</title>
+  <style>
+    .paper { fill: #fff6e4; stroke: #241910; stroke-width: 1.8; }
+    .bind { stroke: #b84328; stroke-width: 2; }
+    .line { stroke: #c9b49a; stroke-width: 1.2; }
+    @media (prefers-color-scheme: dark) {
+      .paper { fill: #2a1f16; stroke: #f3e6d0; }
+      .bind { stroke: #e06a48; }
+      .line { stroke: #5a4636; }
+    }
+  </style>
+  <rect class="paper" x="8" y="8" width="56" height="72" rx="2"/>
+  <path class="bind" d="M36 8v72"/>
+  <path class="line" d="M14 24h16M14 32h16M14 40h14"/>
+  <path class="line" d="M42 24h16M42 32h16M42 40h14"/>
+  <path class="line" d="M14 56h16M42 56h16"/>
+</svg>
