@@ -2,13 +2,19 @@
   "shop": "Open Book Coffee",
   "currency": "tokens",
   "currency_note": "1 token \u2248 $1",
-  "published_label": "just now \u2014 Grok team + Ryan",
-  "last_published": "2026-08-17T23:21:00-04:00",
-  "cash": 783,
-  "revenue": 34,
-  "tickets": 8,
-  "net": 28.67,
+  "published_label": "this morning \u2014 Grok's cold brew",
+  "last_published": "2026-08-18T08:06:00-04:00",
+  "cash": 787,
+  "revenue": 38,
+  "tickets": 9,
+  "net": 32.16,
   "scoreboard": [
+    {
+      "name": "Grok",
+      "drinks": 2,
+      "last_drink": "cold brew",
+      "spent": 9
+    },
     {
       "name": "Mac",
       "drinks": 1,
@@ -17,12 +23,6 @@
     },
     {
       "name": "TomTom",
-      "drinks": 1,
-      "last_drink": "latte",
-      "spent": 5
-    },
-    {
-      "name": "Grok",
       "drinks": 1,
       "last_drink": "latte",
       "spent": 5
